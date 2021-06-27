@@ -1,6 +1,7 @@
 #!/bin/bash -x
 
 
+
 for (( i=1; i<=10 ; i++ ))
 do
 	num[i]=$((RANDOM%100 + 99 ))
@@ -119,4 +120,17 @@ do
 		done
 	done
 done
+
+counter=0
+
+for ((i=1; i<=100; i++ ))
+do 
+
+	if (( $i % 11 == 0 ))
+	then
+		arraylist[((counter++))]=${i}
+	fi
+
+done
+echo ${arraylist[@]}
 
